@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varsity Blogs</title>
+    <!-- Google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <style>
+        body {
+            font-family: "Atkinson Hyperlegible Next", serif;
+        }
+    </style>
+    <!-- AOS ANIMATION CSS  -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body class="bg-yellow-500">
+    <div class="flex flex-col min-h-screen">
+        <nav class="bg-red-600" id="Header">
+            <nav class="bg-red-600" id="Header">
+                <div class="container mx-auto flex justify-between items-center p-4">
+                    <a href="#">
+                        <img src="/assets/images/favicon/insider.png" alt="" class="h-14 pl-2">
+                    </a>
+
+                    <!-- Mobile Toggler Button -->
+                    <button class="lg:hidden text-white transition-all duration-300" type="button" id="menuToggle">
+                        <span class="text-5xl text-black">☰</span>
+                    </button>
+
+                    <!-- Menu for large screens -->
+                    <div class=" hidden lg:flex space-x-6">
+                        <a href="/" class="text-yellow-500 font-bold text-2xl ">HOME</a>
+                        <a href="/careerGuidance.html" class="text-2xl text-beige">InAspire</a>
+                        <a href="/blogs" class="text-2xl text-beige">InScribe</a>
+                        <a href="tutoring.html" class=" text-2xl text-beige">InGuide</a>
+                        <a href="/chats" class="text-beige text-2xl">InTouch</a>
+                        <a href="/admin" class="text-beige text-2xl">Admin</a>
+                    </div>
+
+                    <!-- Username Display -->
+                    <!-- <span class=" ml-auto"><h1 class="text-2xl">Welcome, John Doe</h1> </span> -->
+
+                    <!-- logo Button -->
+                    <button type="button" class="bg-red-600 p-2 ml-3 text-white" data-bs-toggle="modal"
+                        data-bs-target="#emergencyModal">
+                        <a href="index.html"><img src="Assets/insider.png" alt="" height="50px" width="50px">
+                        </a> </button>
+                </div>
+
+                <!-- Mobile Dropdown Menu -->
+                <div class="lg:hidden transition-all duration-300 transform translate-x-full" id="mobileMenu"
+                    style="display: none;">
+                    <a href="/" class="block text-beige p-4">HOME</a>
+                    <a href="/career-guidance" class="  block text-beige p-4">InAspire</a>
+                    <a href="/blogs" class="block text-beige p-4">InScribe</a>
+                    <a href="/tutoring" class="block text-beige p-4">InGuide</a>
+                    <a href="/chats" class="block text-beige p-4">InTouch</a>
+                    <a href="/admin" class="block text-beige p-4">Admin</a>
+                </div>
+            </nav>
+
+            <script>
+                // Toggle mobile menu visibility with smooth transition
+                document.getElementById('menuToggle').addEventListener('click', function () {
+                    const menu = document.getElementById('mobileMenu');
+                    const isMenuOpen = menu.style.display === 'block';
+                    menu.style.display = isMenuOpen ? 'none' : 'block';
+                    menu.classList.toggle('translate-x-full');
+                });
+            </script>
+            <!-- Page Description -->
+            <section class="container mx-auto p-6 flex flex-col md:flex-row items-center">
+                <div data-aos="zoom-in" data-aos-duration="2000" class="md:w-1/2">
+                    <h2 class=" text-3xl font-bold text-yellow-500 ">Welcome to Varsity Blogs Your Ocean of Relevance
+                    </h2>
+                    <p class="text-black text-3xl mr-2 mt-4">Your go-to source for academic success, campus life tips,
+                        and student
+                        resources. Stay informed and get the best out of your varsity experience with our carefully
+                        curated
+                        articles and insights.</p>
+                </div>
+                <div data-aos="flip-right" data-aos-duration="2000" class="md:w-1/2 flex justify-center mt-6 md:mt-0">
+                    <img src="Assets/tutorsProfilePictures/blogs/matt-ragland-02z1I7gv4ao-unsplash.jpg"
+                        alt="Students studying" class="rounded-lg shadow-lg">
+                </div>
+            </section>
+
+            <div class="container mx-auto p-6">
+                <div class="bg-red-600 p-6  max-w-3xl mx-auto mt-6">
+                    <!-- Article Topic -->
+                    <h1 class="text-3xl font-bold text-yellow-500 ">The Future of Web Development</h1>
+
+                    <!-- Author and Date -->
+                    <div class="text-black text-3xl text-sm mt-2">
+                        <span class="text-2xl">By <strong class="text-2xl">Jane Doe</strong></span> •
+                        <span class="text-2xl">Published on <time class="text-2xl " datetime="2024-02-11">February 11,
+                                2024</time></span>
+                    </div>
+                </div>
+                <div data-aos="flip-right" data-aos-duration="2000" style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+                    <iframe loading="lazy"
+                        style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                        src="https://www.canva.com/design/DAGd5EFWW_Q/pH-EgK3Glp7RVIvx8LL6VA/view?embed"
+                        allowfullscreen="allowfullscreen" allow="fullscreen">
+                    </iframe>
+                </div>
+                <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGd5EFWW_Q&#x2F;pH-EgK3Glp7RVIvx8LL6VA&#x2F;view?utm_content=DAGd5EFWW_Q&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
+                    target="_blank" rel="noopener">
+
+                <!-- Carousel -->
+
+                <div class="grid flex flex-wrap gap-4 justify-center">
+
+                    <section class="container mx-auto p-6 flex flex-col md:flex-row items-center">
+                        <div data-aos="zoom-in" data-aos-duration="2000" class="md:w-1/2">
+                            <h2 class=" text-3xl font-bold text-yellow-500 ">Welcome to Varsity Blogs Your Ocean of
+                                Relevance</h2>
+                            <p class="text-black text-3xl mr-2 mt-4">Your go-to source for academic success, campus
+                                life tips, and student
+                                resources. Stay informed and get the best out of your varsity experience with our
+                                carefully curated
+                                articles and insights.</p>
+                        </div>
+                        <div data-aos="flip-right" data-aos-duration="2000"
+                            class="md:w-1/2 flex justify-center mt-6 md:mt-0">
+                            <img src="Assets/tutorsProfilePictures/blogs/anton-sukhinov-_C2A8THeKKs-unsplash (1).jpg"
+                                alt="Students studying" class="rounded-lg shadow-lg">
+                        </div>
+                    </section>
+                    <!-- Exam Tips Card -->
+                    <div style="height: 600px; width: 100%;" data-aos="fade-left" data-aos-duration="2000"
+                        id="examTipsCard"
+                        class="bg-yellow-600 p-4 rounded-lg shadow-lg transform transition hover:scale-105 cursor-pointer">
+                        <h2 class="text-xl font-bold">How to Ace Your Exams</h2>
+                        <p class="text-black font-bold text-xl mt-2">Discover the best study techniques that will
+                            help you succeed. Since it is Exam Season
+                            There`s nothing more important than taking care of the small things that can help you
+                            pass your exams with great marks
+                        </p>
+                        <a id="readMoreBtn"
+                            class="text-red-600 text-2xl font-bold mt-2 inline-block cursor-pointer">Read More</a>
+                        <div style=" width: 100%; height: 80%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+                            <iframe loading="lazy"
+                                style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                                src="https://www.canva.com/design/DAGe3QGdjoY/UxaTMLm2kYeoJCnsUoX5tA/watch?embed"
+                                allowfullscreen="allowfullscreen" allow="fullscreen">
+                            </iframe>
+                        </div>
+                        <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGe3QGdjoY&#x2F;UxaTMLm2kYeoJCnsUoX5tA&#x2F;watch?utm_content=DAGe3QGdjoY&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
+                            target="_blank" rel="noopener"></a>
+
+                    </div>
+
+
+
+
+                    <!-- Blog Posts -->
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+
+                        <!-- Exam Tips Modal (Hidden by Default) -->
+                        <div id="examTipsModal"
+                            class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden">
+                            <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
+                                <h2 class="text-2xl font-bold">Exam Tips & Strategies</h2>
+                                <p class="text-gray-700 mt-2">Follow these tips to maximize your success:</p>
+                                <ul class="list-disc list-inside mt-3 space-y-2 text-gray-800">
+                                    <li><strong>Time Management:</strong> Set a study schedule and stick to it.</li>
+                                    <li><strong>Practice Tests:</strong> Take mock exams to familiarize yourself
+                                        with the
+                                        format.</li>
+                                    <li><strong>Effective Notes:</strong> Summarize key concepts instead of
+                                        memorizing.</li>
+                                    <li><strong>Healthy Routine:</strong> Get enough sleep and eat brain-boosting
+                                        foods.
+                                    </li>
+                                    <li><strong>Exam Strategy:</strong> Read questions carefully and manage your
+                                        time
+                                        wisely.</li>
+                                </ul>
+                                <button id="closeModalBtn"
+                                    class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Close</button>
+                            </div>
+                        </div>
+
+                        <!-- JavaScript for Modal Functionality -->
+                        <script>
+                            const examTipsCard = document.getElementById('examTipsCard');
+                            const readMoreBtn = document.getElementById('readMoreBtn');
+                            const examTipsModal = document.getElementById('examTipsModal');
+                            const closeModalBtn = document.getElementById('closeModalBtn');
+
+                            // Show Modal when clicking the card or 'Read More'
+                            examTipsCard.addEventListener('click', () => {
+                                examTipsModal.classList.remove('hidden');
+                            });
+
+                            readMoreBtn.addEventListener('click', (event) => {
+                                event.stopPropagation(); // Prevents double triggers
+                                examTipsModal.classList.remove('hidden');
+                            });
+
+                            // Close Modal
+                            closeModalBtn.addEventListener('click', () => {
+                                examTipsModal.classList.add('hidden');
+                            });
+
+                            // Close Modal when clicking outside the modal content
+                            window.addEventListener('click', (event) => {
+                                if (event.target === examTipsModal) {
+                                    examTipsModal.classList.add('hidden');
+                                }
+                            });
+                        </script>
+
+                        <div style="width: 100%;" data-aos="zoom-in" data-aos-duration="2000"
+                            class="bg-white p-4 mb-6 rounded-lg shadow-lg transform transition hover:scale-105">
+                            <h2 class="text-xl font-bold">Balancing Social & Academic Life</h2>
+                            <div style="position: relative; width: 100%; height: 0; padding-top: 177.7778%;
+padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+border-radius: 8px; will-change: transform;">
+                                <iframe loading="lazy"
+                                    style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                                    src="https://www.canva.com/design/DAGe0Ibayog/ms1_LL_MGAH2VBS0JsLf0Q/watch?embed"
+                                    allowfullscreen="allowfullscreen" allow="fullscreen">
+                                </iframe>
+                            </div>
+                            <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGe0Ibayog&#x2F;ms1_LL_MGAH2VBS0JsLf0Q&#x2F;watch?utm_content=DAGe0Ibayog&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
+                                target="_blank" rel="noopener"></a>
+                            <p class="text-gray-700 mt-2">Tips on managing your time effectively while still having
+                                fun.</p>
+                            <a href="#" class="text-blue-500 mt-2 inline-block">Read More</a>
+                        </div>
+                        <div data-aos="fade-up" data-aos-duration="2000"
+                            class="bg-white p-4 mb-6 rounded-lg shadow-lg transform transition hover:scale-105">
+                            <h2 class="text-xl font-bold">Scholarships & Bursaries</h2>
+                            <p class="text-gray-700 mt-2">Find out how you can get financial support for your
+                                studies.</p>
+                            <a href="#" class="text-blue-500 mt-2 inline-block">Read More</a>
+                            <div style=" width: 100%; height: 0; padding-top: 100.0000%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+                                <iframe loading="lazy"
+                                    style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+                                    src="https://www.canva.com/design/DAGe0VwXly4/W9--klPMjnObsFEVJ88yNw/view?embed"
+                                    allowfullscreen="allowfullscreen" allow="fullscreen">
+                                </iframe>
+                            </div>
+                            <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGe0VwXly4&#x2F;W9--klPMjnObsFEVJ88yNw&#x2F;view?utm_content=DAGe0VwXly4&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
+                                target="_blank" rel="noopener">Blue Scholarship Instagram Post</a> by _BUSHYEYEBROWS
+                        </div>
+
+                    </div>
+                </div>
+
+                <footer style="width: 100%;" class="bg-gray-800 text-white p-4  mt-auto text-center">&copy; 2025 Varsity
+                    Blogs. All Rights
+                    Reserved.
+                </footer>
+            </div>
+
+            <!--  AOS ANIMATION JS -->
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <!-- AOS INITIALISER -->
+            <script>
+                AOS.init();
+            </script>
+</body>
+
+</html>

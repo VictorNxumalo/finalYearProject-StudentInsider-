@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Google fonts  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet">
+  <link rel="icon" href="/assets/images/favicon/insider.png" type="Image/jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    body{font-family: "Atkinson Hyperlegible Next", serif;}
+</style>
+
+</head>
+<body class="bg-yellow-400 font-[Outfit]">
+
+  <!-- Header -->
+  <nav class="bg-red-600 p-4 flex justify-between items-center">
+    <a href="/"><img src="Assets/insider.png" alt="Logo" class="h-14"></a>
+    <ul class="flex space-x-4 text-white font-bold">
+      <li><a href="/" class="hover:underline">HOME</a></li>
+    </ul>
+  </nav>
+    
+  <!-- Main Side Panel Content -->
+  <div class="flex">
+    <aside class="w-1/5 bg-gray-900 text-white p-4 min-h-screen">
+      <h2 class="text-2xl font-semibold">ADMIN PANEL</h2>
+      <div class="mt-4 relative">
+        <!-- TUTORING Button -->
+        <button  class="w-full text-left p-2 hover:bg-gray-700 bg-red-600 text-white rounded-md focus:outline-none" id="dropdownButtonTutoring">
+           <a href="tutoringApplications.html">TUTORING</a>  
+        </button>
+        <!-- TUTORING Dropdown -->
+        <!-- <div class="absolute left-full top-0 ml-2 w-48 bg-yellow-600 shadow-lg rounded-md mt-1 hidden" id="dropdownMenuTutoring">
+            
+            <div class="pl-4">
+                <a href="TutoringViews/pendingApplications.html" class="block px-4 py-2 hover:bg-gray-200">Pending</a>
+                <a href="TutoringViews/acceptedApplications.html" class="block px-4 py-2 hover:bg-gray-200">Accepted</a>
+                <a href="rejectedApplications.html" class="block px-4 py-2 hover:bg-gray-200">Rejected</a>
+            </div>
+        </div> -->
+    </div>
+    
+    <div class="mt-4 relative">
+        <!-- BLOGS Button -->
+        <button class="w-full text-left p-2 hover:bg-gray-700 bg-red-600 text-white rounded-md focus:outline-none" id="dropdownButtonBlogs">
+           <a href="blogCMS.html">BLOGS</a> 
+        </button>
+        <!-- BLOGS Dropdown -->
+        <!-- <div class="absolute left-full top-0 ml-2 w-48 bg-yellow-600 shadow-lg rounded-md mt-1 hidden" id="dropdownMenuBlogs">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-200">Latest Blogs</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-200">Popular Blogs</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-200">Categories</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-200">Write a Blog</a>
+        </div> -->
+    </div>
+    
+    <div class="mt-4 relative">
+        <!-- TUTORING Button (Another instance) -->
+
+    
+    <div class="mt-4 border-t border-gray-600 pt-4 relative">
+        <!-- ACCOUNT Button -->
+        <button class="w-full text-left p-2 hover:bg-gray-700 bg-red-600 text-white rounded-md focus:outline-none" id="dropdownButtonAccount">
+            ACCOUNT
+        </button>
+        <!-- ACCOUNT Dropdown -->
+        <div class="absolute left-full top-0 ml-2 w-48 bg-yellow-600 shadow-lg rounded-md mt-1 hidden" id="dropdownMenuAccount">
+            <a href="#" class="block px-4 py-2 hover:bg-gray-200">Profile Settings</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-200">Change Password</a>
+            <a href="#" class="block px-4 py-2 hover:bg-gray-200">Logout</a>
+        </div>
+    </div>
+    
+    <script>
+        // Toggle dropdowns for each button
+        const dropdownButtonTutoring = document.getElementById('dropdownButtonTutoring');
+        const dropdownMenuTutoring = document.getElementById('dropdownMenuTutoring');
+        
+        dropdownButtonTutoring.addEventListener('click', () => {
+            dropdownMenuTutoring.classList.toggle('hidden');
+        });
+    
+        const dropdownButtonBlogs = document.getElementById('dropdownButtonBlogs');
+        const dropdownMenuBlogs = document.getElementById('dropdownMenuBlogs');
+        
+        dropdownButtonBlogs.addEventListener('click', () => {
+            dropdownMenuBlogs.classList.toggle('hidden');
+        });
+    
+        const dropdownButtonTutoring2 = document.getElementById('dropdownButtonTutoring2');
+        const dropdownMenuTutoring2 = document.getElementById('dropdownMenuTutoring2');
+        
+        dropdownButtonTutoring2.addEventListener('click', () => {
+            dropdownMenuTutoring2.classList.toggle('hidden');
+        });
+    
+        const dropdownButtonAccount = document.getElementById('dropdownButtonAccount');
+        const dropdownMenuAccount = document.getElementById('dropdownMenuAccount');
+        
+        dropdownButtonAccount.addEventListener('click', () => {
+            dropdownMenuAccount.classList.toggle('hidden');
+        });
+    
+        // Close dropdowns when clicking outside the button or dropdown
+        window.addEventListener('click', (e) => {
+            if (!e.target.closest('.relative')) {
+                document.querySelectorAll('.relative .hidden').forEach(menu => menu.classList.add('hidden'));
+            }
+        });
+    
+        // Show dropdown when mouse enters and hide it when mouse leaves
+        const dropdownMenus = document.querySelectorAll('.relative');
+        dropdownMenus.forEach(menu => {
+            const button = menu.querySelector('button');
+            const dropdown = menu.querySelector('div');
+    
+            // Show dropdown when hovering over the button
+            button.addEventListener('mouseenter', () => {
+                dropdown.classList.remove('hidden');
+            });
+    
+            // Hide dropdown when cursor leaves the button or dropdown
+            menu.addEventListener('mouseleave', () => {
+                dropdown.classList.add('hidden');
+            });
+        });
+    </script>
+    
+    </aside>
+    
+
+    <main class="w-4/5 p-6">
+      <div class="text-center text-lg font-semibold">
+        <span id="current-date-time"></span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+        <div class="bg-white shadow-lg p-4 rounded-lg flex flex-col items-center justify-center">
+            <h3 class="font-semibold mb-4">Users Gained</h3>
+            
+            <!-- Circle Progress Bar -->
+            <div class="relative">
+                <svg class="transform rotate-90" width="150" height="150" viewBox="0 0 120 120">
+                    <!-- Background Circle -->
+                    <circle cx="60" cy="60" r="54" stroke="#e5e7eb" stroke-width="12" fill="none"></circle>
+                    <!-- Progress Circle -->
+                    <circle cx="60" cy="60" r="54" stroke="#3b82f6" stroke-width="12" fill="none" 
+                            stroke-dasharray="339.292" stroke-dashoffset="169.646" transform="rotate(-90 60 60)"></circle>
+                </svg>
+                <!-- Percentage Label -->
+                <div class="absolute inset-0 flex items-center justify-center text-2xl font-semibold text-gray-700">
+                    75%
+                </div>
+            </div>
+        
+            <!-- Text Info -->
+            <div class="mt-4">
+                <p>Number of users gained this month: <strong>100</strong></p>
+                <p>Number of users gained this year: <strong>1200</strong></p>
+                <p>Total users owning accounts: <strong>5000</strong></p>
+            </div>
+        </div>
+        
+       <!-- BAR GRAPH REPRESENTING THE APPLICATIONS -->
+       <div class="bg-white shadow-lg p-4 rounded-lg">
+        <h3 class="font-semibold mb-4">Tutoring Applications</h3>
+        <p class="mb-4">Visual representation of tutoring application statuses.</p>
+    
+        <!-- Pending Applications Bar -->
+        <div class="mb-4">
+            <h4 class="font-semibold">Pending</h4>
+            <div class="w-full bg-gray-300 rounded-full h-4">
+                <div class="bg-red-600 h-4 rounded-full" style="width: 40%"></div> <!-- Change width to match percentage -->
+            </div>
+            <p class="text-gray-600">40% of applications are pending.</p>
+        </div>
+    
+        <!-- Accepted Applications Bar -->
+        <div class="mb-4">
+            <h4 class="font-semibold">Accepted</h4>
+            <div class="w-full bg-gray-300 rounded-full h-4">
+                <div class="bg-yellow-500 h-4 rounded-full" style="width: 30%"></div> <!-- Change width to match percentage -->
+            </div>
+            <p class="text-gray-600">30% of applications have been accepted.</p>
+        </div>
+    
+        <!-- Rejected Applications Bar -->
+        <div class="mb-4">
+            <h4 class="font-semibold">Rejected</h4>
+            <div class="w-full bg-gray-300 rounded-full h-4">
+                <div class="bg-blue-500 h-4 rounded-full" style="width: 30%"></div> <!-- Change width to match percentage -->
+            </div>
+            <p class="text-gray-600">30% of applications have been rejected.</p>
+        </div>
+    </div>
+    
+      </div>
+      <hr class="my-6">
+      <h3 class="text-center text-xl font-bold">Recent Users</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full mt-4 border border-gray-300">
+          <thead class="bg-gray-900 text-white">
+            <tr>
+              <th class="p-2">User ID</th>
+              <th class="p-2">First Name</th>
+              <th class="p-2">Last Name</th>
+              <th class="p-2">Email</th>
+              <th class="p-2">Cellphone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border border-gray-300 text-center">
+              <td class="p-2">1</td>
+              <td class="p-2">John</td>
+              <td class="p-2">Doe</td>
+              <td class="p-2">john@example.com</td>
+              <td class="p-2">123-456-7890</td>
+            </tr>
+            <tr class="border border-gray-300 text-center">
+              <td class="p-2">1</td>
+              <td class="p-2">John</td>
+              <td class="p-2">Doe</td>
+              <td class="p-2">john@example.com</td>
+              <td class="p-2">123-456-7890</td>
+            </tr>
+            <tr class="border border-gray-300 text-center">
+              <td class="p-2">1</td>
+              <td class="p-2">John</td>
+              <td class="p-2">Doe</td>
+              <td class="p-2">john@example.com</td>
+              <td class="p-2">123-456-7890</td>
+            </tr>
+            <tr class="border border-gray-300 text-center">
+              <td class="p-2">1</td>
+              <td class="p-2">John</td>
+              <td class="p-2">Doe</td>
+              <td class="p-2">john@example.com</td>
+              <td class="p-2">123-456-7890</td>
+            </tr>
+            <tr class="border border-gray-300 text-center">
+              <td class="p-2">1</td>
+              <td class="p-2">John</td>
+              <td class="p-2">Doe</td>
+              <td class="p-2">john@example.com</td>
+              <td class="p-2">123-456-7890</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+  
+  <script>
+    setInterval(() => {
+      document.getElementById("current-date-time").textContent = new Date().toLocaleString();
+    }, 1000);
+  </script>
+</body>
+</html>

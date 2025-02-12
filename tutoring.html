@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SI | TUTORING</title>
+    <!-- Google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <link rel="icon" href="/assets/images/favicon/insider.png" type="Image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body{font-family: "Atkinson Hyperlegible Next", serif;}
+    </style>
+</head>
+
+<body class="bg-yellow-400 font-[Outfit] bg-white">
+    <nav class="bg-red-600" id="Header">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="#">
+                <img src="/assets/images/favicon/insider.png" alt="" class="h-14 pl-2">
+            </a>
+
+            <!-- Mobile Toggler Button -->
+            <button class="lg:hidden text-white transition-all duration-300" type="button" id="menuToggle">
+                <span class="text-5xl text-black" >☰</span>
+            </button>
+
+            <!-- Menu for large screens -->
+            <div class="hidden lg:flex space-x-6">
+                <a href="/" class="text-yellow-500 text-2xl font-bold">HOME</a>
+                <a href="/career-guidance" class="text-beige text-2xl">InAspire</a>
+                <a href="/blogs" class="text-beige text-2xl">InScribe</a>
+                <a href="/tutoring" class="text-beige text-2xl">InGuide</a>
+                <a href="/chats" class="text-beige text-2xl">InTouch</a>
+                <a href="/admin" class="text-beige text-2xl">Admin</a>
+            </div>
+
+            <!-- Username Display -->
+            <span class="text-beige ml-auto"></span>
+
+            <!-- logo Button -->
+            <button type="button" class="bg-red-600 p-2 ml-3 text-white" data-bs-toggle="modal"
+                data-bs-target="#emergencyModal">
+                <a href="index.html"><img src="Assets/insider.png" alt="" height="50px" width="50px">
+                </a> </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div class="lg:hidden transition-all duration-300 transform translate-x-full" id="mobileMenu"
+            style="display: none;">
+            <a href="/" class="block text-yellow-500 p-4">HOME</a>
+            <a href="/career-guidance" class="block text-beige p-4">InAspire</a>
+            <a href="/blogs" class="block text-beige p-4">InScribe</a>
+            <a href="/tutoring" class="block text-beige p-4">InGuide</a>
+            <a href="/chats" class="block text-beige p-4">InTouch</a>
+            <a href="/admin" class="block text-beige p-4">Admin</a>
+        </div>
+    </nav>
+
+    <script>
+        // Toggle mobile menu visibility with smooth transition
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            const menu = document.getElementById('mobileMenu');
+            const isMenuOpen = menu.style.display === 'block';
+            menu.style.display = isMenuOpen ? 'none' : 'block';
+            menu.classList.toggle('translate-x-full');
+        });
+    </script>
+    <section class="py-10 text-center">
+        <h1 class="text-3xl font-semibold text-black">Tutoring Section</h1>
+        <dotlottie-player src="https://lottie.host/7deeeb21-b2ca-4ec6-ad2f-643847332eea/2PP82CQvnr.json"
+            background="transparent" speed="1" class="w-full h-[500px]" loop autoplay></dotlottie-player>
+        <p class="max-w-6xl mx-auto text-black text-2xl leading-relaxed">This section connects students with tutors to
+            enhance academic success. Browse tutor profiles, explore their qualifications, and reach out to the right
+            match.</p>
+        <p class="max-w-6xl mx-auto text-black text-2xl  leading-relaxed">Interested in tutoring? Apply to share your
+            expertise and support students in their learning journey.</p>
+        <!-- Apply as a Tutor Button -->
+        <button class="mt-4 px-6 py-3 bg-red-600 text-3xl text-white rounded-lg" id="applyTutorBtn">
+            Apply as a Tutor
+        </button>
+
+        <!-- Modal (Hidden by Default) -->
+        <div id="applyTutorModal"
+            class="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50 hidden">
+            <div class="bg-white p-6 rounded-lg w-full max-w-lg mx-4 md:mx-auto">
+                <h3 class="text-2xl font-semibold mb-4 text-center">Apply as a Tutor</h3>
+                <form action="#" method="POST" class="space-y-4">
+                    <!-- Name -->
+                    <div>
+                        <label for="name" class="block text-gray-700">Name</label>
+                        <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded-md"
+                            required />
+                    </div>
+
+                    <!-- CV -->
+                    <div>
+                        <label for="cv" class="block text-gray-700">CV</label>
+                        <input type="file" id="cv" name="cv" class="w-full p-2 border border-gray-300 rounded-md"
+                            required />
+                    </div>
+
+                    <!-- Transcript -->
+                    <div>
+                        <label for="transcript" class="block text-gray-700">Transcript</label>
+                        <input type="file" id="transcript" name="transcript"
+                            class="w-full p-2 border border-gray-300 rounded-md" required />
+                    </div>
+
+                    <!-- Portfolio -->
+                    <div>
+                        <label for="portfolio" class="block text-gray-700">Portfolio</label>
+                        <input type="file" id="portfolio" name="portfolio"
+                            class="w-full p-2 border border-gray-300 rounded-md" required />
+                    </div>
+
+                    <!-- ID -->
+                    <div>
+                        <label for="id" class="block text-gray-700">ID</label>
+                        <input type="file" id="id" name="id" class="w-full p-2 border border-gray-300 rounded-md"
+                            required />
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="flex justify-between">
+                        <button type="submit"
+                            class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Submit</button>
+                        <button type="button" class="bg-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-400"
+                            id="closeModalBtn">
+                            Cancel
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            // Get modal elements
+            const applyTutorBtn = document.getElementById('applyTutorBtn');
+            const applyTutorModal = document.getElementById('applyTutorModal');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+
+            // Show modal when Apply as a Tutor button is clicked
+            applyTutorBtn.addEventListener('click', () => {
+                applyTutorModal.classList.remove('hidden');
+            });
+
+            // Close modal when Cancel button is clicked
+            closeModalBtn.addEventListener('click', () => {
+                applyTutorModal.classList.add('hidden');
+            });
+
+            // Close modal when clicking outside the form
+            window.addEventListener('click', (event) => {
+                if (event.target === applyTutorModal) {
+                    applyTutorModal.classList.add('hidden');
+                }
+            });
+        </script>
+
+
+    </section>
+    <div class="container mx-auto py-10">
+        <h2 class="text-3xl font-semibold text-center">Available Tutors</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+            <!-- First Card -->
+            <div class="bg-transparent  rounded-lg p-6 text-center">
+                <img src="Assets/tutorsProfilePictures/craig-mckay-jmURdhtm7Ng-unsplash.jpg" style="object-fit:fill;"
+                    alt="Tutor" class="w-auto h-auto mx-auto rounded-full">
+                <h3 class="text-xl font-semibold mt-4">Micheal Black Doe</h3>
+                <p class="text-black-600 text-xl">MichealBDoe@watchout.com</p>
+                <p class="text-black font-bold text-xl mt-2">Experienced Math Tutor with 5 years of teaching experience.</p>
+                <h4 class="text-lg font-semibold mt-2">Subjects: Programming, Mathematics</h4>
+            </div>
+            <!-- Second Card -->
+            <div class="bg-transparent  rounded-lg p-6 text-center">
+                <img src="Assets/tutorsProfilePictures/leon-elldot-f6HbVnGtNnY-unsplash.jpg" style="object-fit:fill;"
+                    alt="Tutor" class="mx-auto rounded-full">
+                <h1 class="text-xl font-semibold mt-4">Sihle Nhlamvu</h1>
+                <p class="text-black-600 text-xl">SNhlamvu@Yahoo.com</p>
+                <p class="text-black font-bold text-xl mt-2">Experienced Math Tutor with 5 years of teaching experience.</p>
+                <h4 class="text-lg font-semibold mt-2">Subjects: Accounting, English</h4>
+            </div>
+            <!-- Third Card -->
+            <div class="bg-transparent  rounded-lg p-6 text-center">
+                <img src="Assets/tutorsProfilePictures/vinicius-amnx-amano-0NCjjD0zGnw-unsplash.jpg"
+                    style="object-fit:fill;" alt="Tutor" class=" mx-auto rounded-full">
+                <h3 class="text-xl font-semibold mt-4">Derly Greenburg</h3>
+                <p class="text-black-600 text-xl">DerlyGreeburg@gmail.com</p>
+                <p class="text-black font-bold text-xl mt-2">Experienced Math Tutor with 5 years of teaching experience.</p>
+                <h4 class="text-lg font-semibold mt-2">Subjects: Programming ,Math, Physics</h4>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

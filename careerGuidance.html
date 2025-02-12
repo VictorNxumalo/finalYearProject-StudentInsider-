@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SI | Career Guidance</title>
+    <!-- Including AOS CSS animation for animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <link rel="icon" href="Assets/insider.png" type="Image/jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body{font-family: "Atkinson Hyperlegible Next", serif;}
+    </style>
+</head>
+
+<body class="bg-yellow-400 font-[Outfit] bg-white">
+    <nav class="bg-red-600" id="Header">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <a href="#">
+                <img src="/assets/images/favicon/insider.png" alt="" class="h-14 pl-2">
+            </a>
+
+            <!-- Mobile Toggler Button -->
+            <button class="lg:hidden text-white transition-all duration-300" type="button" id="menuToggle">
+                <span>☰</span>
+            </button>
+
+            <!-- Menu for large screens -->
+            <div class="hidden lg:flex space-x-6">
+                <a href="/" class="text-yellow-500 text-2xl font-bold">HOME</a>
+                <a href="/career-guidance" class="text-beige text-2xl">InAspire</a>
+                <a href="/blogs" class="text-beige text-2xl">InScribe</a>
+                <a href="/tutoring" class="text-beige text-2xl">InGuide</a>
+                <a href="/chats" class="text-beige text-2xl">InTouch</a>
+                <a href="/admin" class="text-beige text-2xl">Admin</a>
+            </div>
+
+            <!-- Username Display -->
+            <!-- <span class="text-beige ml-auto">Welcome, John Doe</span> -->
+
+            <!-- logo Button -->
+            <button type="button" class="bg-red-600 p-2 ml-3 text-white" data-bs-toggle="modal"
+                data-bs-target="#emergencyModal">
+                <a href="index.html"><img src="Assets/insider.png" alt="" height="50px" width="50px">
+                </a> </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div class="lg:hidden transition-all duration-300 transform translate-x-full" id="mobileMenu"
+            style="display: none;">
+            <a href="/" class="block text-beige p-4">HOME</a>
+            <a href="/career-guidance" class="block text-beige p-4">InAspire</a>
+            <a href="/blogs" class="block text-beige p-4">InScribe</a>
+            <a href="/tutoring" class="block text-beige p-4">InGuide</a>
+            <a href="/chats" class="block text-beige p-4">InTouch</a>
+            <a href="/admin" class="block text-beige p-4">Admin</a>
+        </div>
+    </nav>
+
+    <script>
+        // Toggle mobile menu visibility with smooth transition
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            const menu = document.getElementById('mobileMenu');
+            const isMenuOpen = menu.style.display === 'block';
+            menu.style.display = isMenuOpen ? 'none' : 'block';
+            menu.classList.toggle('translate-x-full');
+        });
+    </script>
+
+    
+    <section class="py-10 text-center">
+        <h1 class="text-3xl font-semibold text-black">Welcome to Your Future!</h1>
+        <p class="max-w-6xl mx-auto text-black text-2xl leading-relaxed">Career guidance helps you align your
+            strengths and interests with potential career opportunities. Our goal is to support you in making informed
+            decisions for your future.</p>
+    </section>
+    <div class="flex items-center justify-center ">
+        <a href="https://www.uj.ac.za/"
+            class="mt-auto px-6 py-3 bg-red-600 text-white text-2xl     rounded-lg">
+            Visit University of Johannesburg</a>
+        </a>
+    </div>
+
+    <div class="container mx-auto py-10">
+        <h2 class="text-2xl font-semibold text-center">Faculties at University of Johannesburg</h2>
+        <p class="max-w-6xl mx-auto text-black text-2xl g leading-relaxed">Explore the various faculties and career
+            options available at UJ. Gain insight into your field of interest and plan your academic journey
+            effectively.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+            <!-- First Faculty Card -->
+            <div data-aos="zoom-in" data-aos-duration="1200" class="bg-white shadow-lg rounded-lg p-6 text-center">
+                <img src="Assets/facultyimages/artFaculty.jpg" alt="Faculty"
+                    class="w-full h-60 object-cover rounded-lg">
+                <h3 class="text-xl font-semibold mt-4">Faculty of Art, Design & Architecture</h3>
+                <p class="text-gray-600 text-xl">Explore innovation and creativity in design, media, and architecture.</p>
+                <a href="faculty.html" class="mt-2 text-xl inline-block bg-red-600 text-white px-4 py-2 rounded hover:bg-blue-600">View More</a>
+
+            </div>
+            <!-- Second Faculty Card -->
+            <div data-aos="zoom-in" data-aos-duration="1400" class="bg-white shadow-lg rounded-lg p-6 text-center">
+                <img src="Assets/facultyimages/Engineering.jpg" alt="Faculty"
+                    class="w-full h-60 object-cover rounded-lg">
+                <h3 class="text-xl font-semibold mt-4">Faculty of Engineering & the Built Environment</h3>
+                <p class="text-gray-600 text-xl">Explore innovation and creativity in design, media, and architecture.</p>
+                <a href="faculty.html" class="mt-2 text-xl inline-block bg-red-600 text-white px-4 py-2 rounded hover:bg-blue-600">View More</a>
+
+            </div>
+            <!-- Third Faculty Card -->
+            <div data-aos="zoom-in" data-aos-duration="1600" class="bg-white shadow-lg rounded-lg p-6 text-center">
+                <img src="Assets/facultyimages/health.jpg" alt="Faculty" class="w-full h-60 object-cover rounded-lg">
+                <h3 class="text-xl font-semibold mt-4">Faculty of health Sciences</h3>
+                <p class="text-gray-600 text-xl">Explore innovation and creativity in design, media, and architecture.</p>
+                <a href="faculty.html" class="mt-2 text-xl inline-block bg-red-600 text-white px-4 py-2 rounded hover:bg-blue-600">View More</a>
+
+            </div>
+            <!-- Fourth Faculty Card -->
+            <div data-aos="zoom-in" data-aos-duration="1600" class="bg-white shadow-lg rounded-lg p-6 text-center">
+                <img src="Assets/facultyimages/Business&Economics.jpg" alt="Faculty"
+                    class="w-full h-60 object-cover rounded-lg">
+                <h3 class="text-xl font-semibold mt-4">Faculty of Business & Economics</h3>
+                <p class="text-gray-600 text-xl">Explore innovation and creativity in design, media, and architecture.</p>
+                <a href="faculty.html" class="mt-2 text-xl inline-block bg-red-600 text-white px-4 py-2 rounded hover:bg-blue-600">View More</a>
+
+            </div>
+            <!-- Fifth Faculty Card -->
+            <div data-aos="zoom-in" data-aos-duration="1400" class="bg-white shadow-lg rounded-lg p-6 text-center">
+                <img src="Assets/facultyimages/law.jpg" alt="Faculty" class="w-full h-60 object-cover rounded-lg">
+                <h3 class="text-xl font-semibold mt-4">Faculty of Law</h3>
+                <p class="text-gray-600 text-xl">Explore innovation and creativity in design, media, and architecture.</p>
+                <a href="faculty.html" class="mt-2 text-xl inline-block bg-red-600 text-white px-4 py-2 rounded hover:bg-blue-600">View More</a>
+
+            </div>
+            <!-- Sixth Faculty Card -->
+            <div data-aos="zoom-in" data-aos-duration="1200" class="bg-white shadow-lg rounded-lg p-6 text-center">
+                <img src="Assets/facultyimages/science.jpg" alt="Faculty" class="w-full h-60 object-cover rounded-lg">
+                <h3 class="text-xl font-semibold mt-4">Faculty of Science</h3>
+                <p class="text-gray-600 text-xl">Explore innovation and creativity in design, media, and architecture.</p>
+                <a href="faculty.html" class="mt-2 text-xl inline-block bg-red-600 text-white px-4 py-2 rounded hover:bg-blue-600">View More</a>
+
+            </div>
+            <!-- Seventh Faculty Card -->
+            <div data-aos="zoom-in" data-aos-duration="1200" class="bg-white shadow-lg rounded-lg p-6 text-center">
+                <img src="Assets/facultyimages/Education.jpg" alt="Faculty" class="w-full h-60 object-cover rounded-lg">
+                <h3 class="text-xl font-semibold mt-4">Faculty of Education</h3>
+                <p class="text-gray-600 text-xl">Explore innovation and creativity in design, media, and architecture.</p>
+                <a href="faculty.html" class="mt-2 text-xl inline-block bg-red-600 text-white px-4 py-2 rounded hover:bg-blue-600">View More</a>
+
+            </div>
+            <!-- Eighth Faculty Card -->
+            <div data-aos="zoom-in" data-aos-duration="1400" class="bg-white shadow-lg rounded-lg p-6 text-center">
+                <img src="Assets/facultyimages/Humanities.jpg" alt="Faculty"
+                    class="w-full h-60 object-cover rounded-lg">
+                <h3 class="text-xl font-semibold mt-4">Faculty Humanities</h3>
+                <p class="text-gray-600 text-xl" >Explore innovation and creativity in design, media, and architecture.</p>
+                <a href="faculty.html" class="mt-2 inline-block bg-red-600 text-white px-4 py-2 rounded hover:bg-blue-600">View More</a>
+
+            </div>
+            <!-- Ninth Faculty Card -->
+            <div data-aos="zoom-in" data-aos-duration="1600" class="bg-white shadow-lg rounded-lg p-6 text-center">
+                <img src="Assets/facultyimages/Johannesburg.jpg" alt="Faculty"
+                    class="w-full h-60 object-cover rounded-lg">
+                <h3 class="text-xl font-semibold mt-4">Faculty Johannesburg Business School</h3>
+                <p class="text-gray-600 text-xl">Explore innovation and creativity in design, media, and architecture.</p>
+                <a href="faculty.html" class="mt-2 text-xl inline-block bg-red-600 text-white px-4 py-2 rounded hover:bg-blue-600">View More</a>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+</body>
+
+</html>

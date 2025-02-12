@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Blogs</title>
+    <!-- Google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body{font-family: "Atkinson Hyperlegible Next", serif;}
+</style>
+</head>
+<body class="bg-yellow-500">
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-1/5 bg-gray-900 h-screen p-4 text-white">
+            <h2 class="text-4xl mt-6 mb-4 text-red-600 font-bold">ADMIN PANEL</h2>
+            <nav class="mt-4">
+                <ul>
+                    <li class="mb-2"><a href="tutoringApplications.html" class="block hover:bg-gray-700 bg-red-600 p-2 text-2xl rounded">TUTORING</a></li>
+                    <!-- <li class="mb-2"><a href="blogCMS.html" class="block bg-blue-600 p-2 rounded">BLOGS</a></li> -->
+                    <!-- <li class="mb-2"><a href="tutoringApplications.html" class="block bg-blue-600 p-2 rounded">TUTORING</a></li> -->
+                    <li class="mb-2"><a href="#" class="block hover:bg-gray-700 bg-red-600 p-2 rounded text-2xl">ACCOUNT</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+           
+            <header class="bg-red-600 text-white p-4 flex justify-between">
+                <h1 class="text-2xl text-black">Admin Blogs</h1>
+                <a href="index.html" class="text-black text-2xl">HOME</a>
+            </header>
+            <p class="text-3xl">As an admin, here is the section where you will handle updates of contents into the blogs website</p>
+            <div class=" py-2 my-4 items-center justify-center ">
+                <a href="admin.html"
+                    class="mt-auto px-6 py-3 bg-red-600 text-black  text-2xl">
+                    << Return To Admin </a>
+            </div>
+            <div class="mt-4 text-2xl bg-white p-4 rounded shadow">
+                <h2 class="font-bold mb-2">Upload Blog Content</h2>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 font-bold">Title:</label>
+                        <input type="text" class="w-full p-2 border rounded" placeholder="Enter blog title">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-bold">Content:</label>
+                        <textarea class="w-full p-2 border rounded" rows="5" placeholder="Enter blog content"></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-bold">Target Webpage:</label>
+                        <input type="text" class="w-full p-2 border rounded" placeholder="Enter webpage URL">
+                    </div>
+                    <button class="bg-red-600 text-white p-2 rounded">Upload Blog</button>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

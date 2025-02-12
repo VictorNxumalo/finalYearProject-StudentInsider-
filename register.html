@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SI | Blogs</title>
+
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- External Styles (Optional) -->
+    <link rel="stylesheet" href="assets/css/RegisterStyles.css">
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon/insider.png" type="image/jpg">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet"></head>
+        <style>
+            body{font-family: "Atkinson Hyperlegible Next", serif;}
+        </style>
+
+<body class="bg-yellow-400 font-outfit">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-red-600 top-0 w-full shadow-lg z-50">
+        <div class="container mx-auto flex items-center justify-between p-4">
+            <!-- Brand Logo -->
+            <a href="index.html" class="flex items-center space-x-2">
+                <img src="Assets/insider.png" alt="Student Insider logo" class="h-14">
+                <span class="text-white text-2xl font-semibold">Student Insider</span>
+            </a>
+            
+            <!-- Navbar Toggler for small screens -->
+            <button class="lg:hidden text-white focus:outline-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse lg:flex items-center space-x-6" id="navbarCollapse">
+                <ul class="flex space-x-6 text-white font-medium">
+                    <li>
+                        <a class="hover:text-gray-300 transition-colors" href="/">HOME</a>
+                    </li>
+                    <li>
+                        <a class="hover:text-gray-300 transition-colors" href="/login">LOG IN</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+
+    <!-- Main Content -->
+    <section class="m-4 flex flex-col items-center text-center">
+        <img src="Assets/insider.png" alt="Student Insider logo" class="h-36 mx-auto">
+        <h2 class="text-3xl font-bold mt-4">Registering form</h2>
+        <p class="text-lg mt-4 text-gray-700">Please provide all the information required below for you to be registered and you will own an account. <strong>NOTE:</strong> This is a one-time process, and all your information is protected and even encrypted, meaning we cannot see it nor alter it.</p>
+    </section>
+    
+    <main class="py-12">
+        <!-- Registration Form -->
+        <section class="row flex g-5 mt-12">
+            <div class="col-md-6 mx-auto">
+                <h3 class="mb-3 text-2xl">Full information</h3>
+                <form action="/register" method="post" class="needs-validation space-y-6" novalidate>
+                    <fieldset class="space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- FIRSTNAME -->
+                            <div class="col-sm-4" data-aos="fade-down" data-aos-duration="1000">
+                                <label for="firstName" class="form-label text-lg">First name</label>
+                                <input type="text" class="form-input w-full px-4 py-2 border rounded-lg" id="firstName" name="firstName" placeholder="" value="" required>
+                                <div class="invalid-feedback">Valid first name is required.</div>
+                            </div>
+
+                            <!-- LASTNAME -->
+                            <div class="col-sm-4" data-aos="fade-down" data-aos-duration="1400">
+                                <label for="lastName" class="form-label text-lg">Last name</label>
+                                <input type="text" class="form-input w-full px-4 py-2 border rounded-lg" id="lastName" name="lastName" placeholder="" value="" required>
+                                <div class="invalid-feedback">Valid last name is required.</div>
+                            </div>
+
+                            <!-- CELL NUMBER -->
+                            <div class="col-sm-4" data-aos="fade-down" data-aos-duration="1800">
+                                <label for="cellphone" class="form-label text-lg">Cellphone Number</label>
+                                <input type="text" class="form-input w-full px-4 py-2 border rounded-lg" id="cellphone" name="cellphone" placeholder="" value="" required>
+                                <div class="invalid-feedback">Valid cellphone number is required.</div>
+                            </div>
+
+                            <!-- EMAIL -->
+                            <div class="col-12" data-aos="fade-right" data-aos-duration="2000">
+                                <label for="email" class="form-label text-lg">Email <span class="text-gray-500">(Optional)</span></label>
+                                <input type="email" class="form-input w-full px-4 py-2 border rounded-lg" id="email" name="email" placeholder="you@example.com">
+                                <div class="invalid-feedback">Please enter a valid email address.</div>
+                            </div>
+
+                            <!-- STUDENT NUMBER -->
+                            <div class="col-md-6" data-aos="fade-up" data-aos-duration="2000">
+                                <label for="student_number" class="form-label text-lg">Student Number</label>
+                                <input type="text" class="form-input w-full px-4 py-2 border rounded-lg" id="student_number" name="student_number" placeholder="" required>
+                                <div class="invalid-feedback">Student number is required.</div>
+                            </div>
+
+                            <!-- PASSWORD -->
+                            <div class="col-md-6" data-aos="fade-up" data-aos-duration="2000">
+                                <label for="password" class="form-label text-lg">Password</label>
+                                <input type="password" class="form-input w-full px-4 py-2 border rounded-lg" id="password" name="password" placeholder="" required>
+                                <div class="invalid-feedback">Password is required.</div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <hr class="my-4">
+                    <!-- Submit Button -->
+                    <button class="w-full bg-yellow-500 text-white py-3 rounded-lg text-xl" type="submit" data-aos="zoom-in" data-aos-duration="2000">SUBMIT</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <main class="bg-yellow-400 text-black py-8">
+        <div class="container mx-auto text-center">
+            <div class="flex justify-center gap-6 mb-6">
+                <a href="#" aria-label="Facebook">
+                    <img src="images/socials icons/facebook.png" alt="Facebook icon" class="h-12">
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <img src="images/socials icons/instagram.png" alt="Instagram icon" class="h-12">
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <img src="images/socials icons/twitter.png" alt="Twitter icon" class="h-12">
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <img src="images/socials icons/linkedin.png" alt="LinkedIn icon" class="h-12">
+                </a>
+            </div>
+
+            <div>
+                <h5 class="text-lg mb-3">About Us</h5>
+                <p class="text-black">"Formed in 2006 by Matt Hobbs and Cael Jones, Videoprah is an award-winning, full-service production company specializing."</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

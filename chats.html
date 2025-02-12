@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Chat Section</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <style>
+        body{font-family: "Atkinson Hyperlegible Next", serif;}
+    </style>
+
+</head>
+
+<body class="bg-red-600">
+    <header class="bg-red-600 text-white text-4xl p-4 text-center font-bold">Intouch</header>
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-red-600 text-white p-6 flex flex-col">
+            <nav class="mt-6">
+                <ul class="space-y-3">
+                    <li><a href="index.html" class="block hover:bg-yellow-500 text-2xl bg-red-600 py-2 px-4 rounded text-center">HOME</a></li>
+                    <li><button id="profileSettingsBtn"
+                            class="block hover:bg-yellow-500 text-2xl bg-red-600 py-2 px-4 rounded w-full text-center">PROFILE</button></li>
+                    <!-- Profile Settings Modal -->
+                    <div id="profileSettingsModal"
+                        class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden">
+                        <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
+                            <h2 class="text-2xl font-bold mb-4 text-center">Profile Settings</h2>
+                            <form action="#" method="POST" class="space-y-4">
+                                <!-- Profile Picture -->
+                                <div>
+                                    <label for="profilePic" class="block text-gray-700">Profile Picture</label>
+                                    <input type="file" id="profilePic" name="profilePic"
+                                        class="w-full p-2 border rounded-lg">
+                                </div>
+
+                                <!-- Username -->
+                                <div>
+                                    <label for="username" class="block text-gray-700">Username</label>
+                                    <input type="text" id="username" name="username"
+                                        class="w-full p-2 border rounded-lg" required>
+                                </div>
+
+                                <!-- Bio -->
+                                <div>
+                                    <label for="bio" class="block text-gray-700">Bio</label>
+                                    <textarea id="bio" name="bio" class="w-full p-2 border rounded-lg"
+                                        rows="3"></textarea>
+                                </div>
+
+                                <!-- Email -->
+                                <div>
+                                    <label for="email" class="block text-gray-700">Email</label>
+                                    <input type="email" id="email" name="email" class="w-full p-2 border rounded-lg"
+                                        required>
+                                </div>
+
+                                <!-- Password -->
+                                <div>
+                                    <label for="password" class="block text-gray-700">New Password</label>
+                                    <input type="password" id="password" name="password"
+                                        class="w-full p-2 border rounded-lg">
+                                </div>
+
+                                <!-- Buttons -->
+                                <div class="flex justify-between">
+                                    <button type="submit"
+                                        class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Save
+                                        Changes</button>
+                                    <button type="button" id="closeModalBtn"
+                                        class="bg-gray-300 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-400">Cancel</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <script>
+                        const profileSettingsBtn = document.getElementById('profileSettingsBtn');
+                        const profileSettingsModal = document.getElementById('profileSettingsModal');
+                        const closeModalBtn = document.getElementById('closeModalBtn');
+
+                        // Show Profile Modal
+                        profileSettingsBtn.addEventListener('click', () => {
+                            profileSettingsModal.classList.remove('hidden');
+                        });
+
+                        // Close Modal
+                        closeModalBtn.addEventListener('click', () => {
+                            profileSettingsModal.classList.add('hidden');
+                        });
+
+                        // Close Modal When Clicking Outside
+                        window.addEventListener('click', (e) => {
+                            if (e.target === profileSettingsModal) {
+                                profileSettingsModal.classList.add('hidden');
+                            }
+                        });
+                    </script>
+                    <!-- Chats Dropdown -->
+                    <li class="relative">
+                        <button id="chatButton"
+                            class="w-full hover:bg-yellow-500 text-2xl py-2 px-4 rounded flex justify-between items-center">
+                            CHATS <span>▼</span>
+                        </button>
+                        <div id="dropdownMenu"
+                            class="absolute left-0 w-full bg-yellow-500 text-gray-900 shadow-lg rounded hidden mt-2">
+                            <a href="#" class="block text-xl px-4 py-2 hover:bg-red-600">Friends</a>
+                            <a href="#" class="block text-xl px-4 py-2 hover:bg-red-600">Tutors</a>
+                        </div>
+                    </li>
+
+                    <li><a href="#" class="block hover:bg-yellow-500 text-2xl bg-red-600 py-2 px-4 rounded text-center">ACCOUNT</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- Main Chat Section -->
+        <main class="flex-1 flex flex-col">
+            <!-- Profile Display Section -->
+            <div class="bg-red-600 grid grid-cols-3 p-4 items-center space-x-4 mb-4">
+                <!-- Profile Picture -->
+                <div class="ml-8">
+                    <img id="profileImage" src="Assets/profilePicture/julian-myles-JRPu9rnNgH8-unsplash.jpg" alt="Profile Picture"
+                    height="120px" width="120px"  class=" rounded-full border-2 border-gray-300">
+
+                </div>
+                
+                <!-- User Info -->
+                <div>
+                    <h2 id="displayUsername" class="text-4xl font-bold text-white">John Doe</h2>
+                    <p id="displayBio" class="text-white text-xl">A passionate tutor ready to help!</p>
+                </div>
+            </div>
+
+            <!-- Header -->
+            <div class="flex flex-grow p-6 space-x-6">
+                <!-- Contacts List -->
+                <aside class="w-1/4 bg-white p-4 rounded-lg shadow-lg">
+                    <h2 class="font-semibold mb-4">Contacts</h2>
+                    <ul class="space-y-2">
+                        <li class="p-3 bg-green-500 rounded-lg cursor-pointer hover:bg-gray-300">John Doe</li>
+                        <li class="p-3 bg-green-500 rounded-lg cursor-pointer hover:bg-gray-300">Jane Smith</li>
+                        <li class="p-3 bg-green-500 rounded-lg cursor-pointer hover:bg-gray-300">Alice Johnson</li>
+                        <li class="p-3 bg-green-500 rounded-lg cursor-pointer hover:bg-gray-300">Mark Brown</li>
+                    </ul>
+                </aside>
+
+                <!-- Chat Section -->
+                <div class="flex-1 bg-white p-6 rounded-lg shadow-lg flex flex-col">
+                    <div class="border-b pb-2 mb-4 font-semibold text-lg">John Doe</div>
+
+                    <!-- Chat Messages -->
+                    <div class="flex-1 overflow-y-auto space-y-3 p-2">
+                        <div class="self-start bg-blue-500 text-gray-800 p-3 rounded-lg max-w-xs">Hello!</div>
+                        <div class="self-end bg-yellow-500 text-white p-3 rounded-lg max-w-xs ml-auto">Hi there!</div>
+                        <div class="self-start bg-blue-500 text-gray-800 p-3 rounded-lg max-w-xs">How are you?</div>
+                        <div class="self-end bg-yellow-500 text-white p-3 rounded-lg max-w-xs ml-auto">I'm good, thanks!
+                        </div>
+                    </div>
+
+                    <!-- Chat Input -->
+                    <div class="mt-4 flex items-center space-x-3">
+                        <input type="text" class="flex-1 p-3 border rounded-lg" placeholder="Type a message...">
+                        <button class="bg-green-600 text-white px-4 py-2 rounded-lg">Send</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const chatButton = document.getElementById('chatButton');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+
+        // Show dropdown when CHAT button is clicked
+        chatButton.addEventListener('click', function (e) {
+            e.stopPropagation();
+            dropdownMenu.classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside
+        window.addEventListener('click', function (e) {
+            if (!chatButton.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                dropdownMenu.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+
+</html>
