@@ -13,23 +13,67 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap"
         rel="stylesheet">
-        <style>
-            body{font-family: "Atkinson Hyperlegible Next", serif;}
-        </style>
+    <style>
+        body {
+            font-family: "Atkinson Hyperlegible Next", serif;
+        }
+    </style>
 </head>
 
 <body class="bg-yellow-500">
+    <nav class="bg-red-600" id="Header">
+        <div class="container mx-auto flex items-center justify-between w-full p-4">
+            <!-- Logo -->
+            <a href="#">
+                <img src="Assets/insider.png" alt="" class="h-16 pl-4">
+            </a>
+
+            <!-- Mobile Toggler Button (moved to the right) -->
+            <button class="lg:hidden text-white transition-all duration-300 ml-auto" type="button" id="menuToggle">
+                <span class="text-5xl text-black">☰</span>
+            </button>
+        </div>
+
+        <!-- Menu for large screens -->
+        <div class="hidden lg:flex space-x-6 justify-center">
+            <a href="register.html" class="text-yellow-500 font-bold text-2xl">REGISTER</a>
+            <a href="login.html" class="text-yellow-500 font-bold text-2xl">LOG IN</a>
+            <a href="/" class="text-yellow-500 font-bold text-2xl">HOME</a>
+            <a href="/careerGuidance.html" class="text-beige text-2xl">InAspire</a>
+            <a href="/blogs" class="text-beige text-2xl">InScribe</a>
+            <a href="tutoring.html" class="text-beige text-2xl">InGuide</a>
+            <a href="/chats" class="text-beige text-2xl">InTouch</a>
+            <a href="/admin" class="text-beige text-2xl">Admin</a>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div class="lg:hidden transition-all duration-300 transform translate-x-full" id="mobileMenu"
+            style="display: none;">
+            <a href="/" class="block text-yellow-500 p-4">HOME</a>
+            <a href="/careerGuidance.html" class="block text-beige p-4">InAspire</a>
+            <a href="/blogs" class="block text-beige p-4">InScribe</a>
+            <a href="/tutoring" class="block text-beige p-4">InGuide</a>
+            <a href="/chats" class="block text-beige p-4">InTouch</a>
+            <a href="/admin" class="block text-beige p-4">Admin</a>
+        </div>
+
+        <script>
+            // Toggle mobile menu visibility with smooth transition
+            document.getElementById('menuToggle').addEventListener('click', function () {
+                const menu = document.getElementById('mobileMenu');
+                const isMenuOpen = menu.style.display === 'block';
+                menu.style.display = isMenuOpen ? 'none' : 'block';
+                menu.classList.toggle('translate-x-full');
+            });
+        </script>
+    </nav>
     <div class="flex">
         <!-- Sidebar -->
         <!-- Main Content -->
         <main class="flex-1 p-6">
-            <header class="bg-red-600 text-black p-4 flex justify-between">
-                <h1 class="text-2xl ">Tutoring  Applications</h1>
-                <a href="index.html" class="text-2xl">HOME</a>
-            </header>
+
             <div class=" py-2 my-4 items-center justify-center ">
-                <a href="admin.html"
-                    class="mt-auto px-6 py-3 text-2xl bg-red-600 text-white rounded-lg">
+                <a href="admin.html" class="mt-auto px-6 py-3 text-2xl bg-red-600 text-white rounded-lg">
                     << Return To Admin </a>
             </div>
             <!-- REJECTION APPLICATION -->
@@ -104,7 +148,7 @@
                             <th class="border border-gray-300 p-2">First Name</th>
                             <th class="border border-gray-300 p-2">Last Name</th>
                             <th class="border border-gray-300 p-2">Email</th>
-                            
+
                         </tr>
                     </thead>
                     <tbody>
@@ -113,14 +157,14 @@
                             <td class="border border-gray-300 p-2">Jane</td>
                             <td class="border border-gray-300 p-2">Smith</td>
                             <td class="border border-gray-300 p-2">jane@example.com</td>
-                           
+
                         </tr>
                         <tr class="bg-gray-200">
                             <td class="border border-gray-300 p-2">2</td>
                             <td class="border border-gray-300 p-2">Mike</td>
                             <td class="border border-gray-300 p-2">Johnson</td>
                             <td class="border border-gray-300 p-2">mike@example.com</td>
-                            
+
                         </tr>
                     </tbody>
                 </table>

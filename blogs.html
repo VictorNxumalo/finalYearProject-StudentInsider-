@@ -22,52 +22,44 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body class="bg-yellow-500">
+<body class="bg-red-600">
     <div class="flex flex-col min-h-screen">
         <nav class="bg-red-600" id="Header">
-            <nav class="bg-red-600" id="Header">
-                <div class="container mx-auto flex justify-between items-center p-4">
-                    <a href="#">
-                        <img src="/assets/images/favicon/insider.png" alt="" class="h-14 pl-2">
-                    </a>
-
-                    <!-- Mobile Toggler Button -->
-                    <button class="lg:hidden text-white transition-all duration-300" type="button" id="menuToggle">
-                        <span class="text-5xl text-black">☰</span>
-                    </button>
-
-                    <!-- Menu for large screens -->
-                    <div class=" hidden lg:flex space-x-6">
-                        <a href="/" class="text-yellow-500 font-bold text-2xl ">HOME</a>
-                        <a href="/careerGuidance.html" class="text-2xl text-beige">InAspire</a>
-                        <a href="/blogs" class="text-2xl text-beige">InScribe</a>
-                        <a href="tutoring.html" class=" text-2xl text-beige">InGuide</a>
-                        <a href="/chats" class="text-beige text-2xl">InTouch</a>
-                        <a href="/admin" class="text-beige text-2xl">Admin</a>
-                    </div>
-
-                    <!-- Username Display -->
-                    <!-- <span class=" ml-auto"><h1 class="text-2xl">Welcome, John Doe</h1> </span> -->
-
-                    <!-- logo Button -->
-                    <button type="button" class="bg-red-600 p-2 ml-3 text-white" data-bs-toggle="modal"
-                        data-bs-target="#emergencyModal">
-                        <a href="index.html"><img src="Assets/insider.png" alt="" height="50px" width="50px">
-                        </a> </button>
-                </div>
-
-                <!-- Mobile Dropdown Menu -->
-                <div class="lg:hidden transition-all duration-300 transform translate-x-full" id="mobileMenu"
-                    style="display: none;">
-                    <a href="/" class="block text-beige p-4">HOME</a>
-                    <a href="/career-guidance" class="  block text-beige p-4">InAspire</a>
-                    <a href="/blogs" class="block text-beige p-4">InScribe</a>
-                    <a href="/tutoring" class="block text-beige p-4">InGuide</a>
-                    <a href="/chats" class="block text-beige p-4">InTouch</a>
-                    <a href="/admin" class="block text-beige p-4">Admin</a>
-                </div>
-            </nav>
-
+            <div class="container mx-auto flex items-center justify-between w-full p-4">
+                <!-- Logo -->
+                <a href="#">
+                    <img src="Assets/insider.png" alt="" class="h-16 pl-4">
+                </a>
+    
+                <!-- Mobile Toggler Button (moved to the right) -->
+                <button class="lg:hidden text-white transition-all duration-300 ml-auto" type="button" id="menuToggle">
+                    <span class="text-5xl text-black">☰</span>
+                </button>
+            </div>
+    
+            <!-- Menu for large screens -->
+            <div class="hidden lg:flex space-x-6 justify-center">
+                <a href="register.html" class="text-yellow-500 font-bold text-2xl">REGISTER</a>
+                <a href="login.html" class="text-yellow-500 font-bold text-2xl">LOG IN</a>
+                <a href="/" class="text-yellow-500 font-bold text-2xl">HOME</a>
+                <a href="/careerGuidance.html" class="text-beige text-2xl">InAspire</a>
+                <a href="/blogs" class="text-beige text-2xl">InScribe</a>
+                <a href="tutoring.html" class="text-beige text-2xl">InGuide</a>
+                <a href="/chats" class="text-beige text-2xl">InTouch</a>
+                <a href="/admin" class="text-beige text-2xl">Admin</a>
+            </div>
+    
+            <!-- Mobile Dropdown Menu -->
+            <div class="lg:hidden transition-all duration-300 transform translate-x-full" id="mobileMenu"
+                style="display: none;">
+                <a href="/" class="block text-yellow-500 p-4">HOME</a>
+                <a href="/careerGuidance.html" class="block text-beige p-4">InAspire</a>
+                <a href="/blogs" class="block text-beige p-4">InScribe</a>
+                <a href="/tutoring" class="block text-beige p-4">InGuide</a>
+                <a href="/chats" class="block text-beige p-4">InTouch</a>
+                <a href="/admin" class="block text-beige p-4">Admin</a>
+            </div>
+    
             <script>
                 // Toggle mobile menu visibility with smooth transition
                 document.getElementById('menuToggle').addEventListener('click', function () {
@@ -77,6 +69,7 @@
                     menu.classList.toggle('translate-x-full');
                 });
             </script>
+        </nav>
             <!-- Page Description -->
             <section class="container mx-auto p-6 flex flex-col md:flex-row items-center">
                 <div data-aos="zoom-in" data-aos-duration="2000" class="md:w-1/2">

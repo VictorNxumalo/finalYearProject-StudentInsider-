@@ -29,31 +29,51 @@
 <body class="bg-yellow-400 font-outfit">
 
     <!-- Navigation Bar -->
-    <nav class="bg-red-600 top-0 w-full shadow-lg z-50">
-        <div class="container mx-auto flex items-center justify-between p-4">
-            <!-- Brand Logo -->
-            <a href="index.html" class="flex items-center space-x-2">
-                <img src="Assets/insider.png" alt="Student Insider logo" class="h-14">
-                <span class="text-white text-2xl font-semibold">Student Insider</span>
+    <nav class="bg-red-600" id="Header">
+        <div class="container mx-auto flex items-center justify-between w-full p-4">
+            <!-- Logo -->
+            <a href="#">
+                <img src="Assets/insider.png" alt="" class="h-16 pl-4">
             </a>
-            
-            <!-- Navbar Toggler for small screens -->
-            <button class="lg:hidden text-white focus:outline-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+
+            <!-- Mobile Toggler Button (moved to the right) -->
+            <button class="lg:hidden text-white transition-all duration-300 ml-auto" type="button" id="menuToggle">
+                <span class="text-5xl text-black">☰</span>
             </button>
-    
-            <!-- Navbar Links -->
-            <div class="collapse navbar-collapse lg:flex items-center space-x-6" id="navbarCollapse">
-                <ul class="flex space-x-6 text-white font-medium">
-                    <li>
-                        <a class="hover:text-gray-300 transition-colors" href="/">HOME</a>
-                    </li>
-                    <li>
-                        <a class="hover:text-gray-300 transition-colors" href="/login">LOG IN</a>
-                    </li>
-                </ul>
-            </div>
         </div>
+
+        <!-- Menu for large screens -->
+        <div class="hidden lg:flex space-x-6 justify-center">
+            <a href="register.html" class="text-yellow-500 font-bold text-2xl">REGISTER</a>
+            <a href="login.html" class="text-yellow-500 font-bold text-2xl">LOG IN</a>
+            <a href="/" class="text-yellow-500 font-bold text-2xl">HOME</a>
+            <a href="/careerGuidance.html" class="text-beige text-2xl">InAspire</a>
+            <a href="/blogs" class="text-beige text-2xl">InScribe</a>
+            <a href="tutoring.html" class="text-beige text-2xl">InGuide</a>
+            <a href="/chats" class="text-beige text-2xl">InTouch</a>
+            <a href="/admin" class="text-beige text-2xl">Admin</a>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div class="lg:hidden transition-all duration-300 transform translate-x-full" id="mobileMenu"
+            style="display: none;">
+            <a href="/" class="block text-yellow-500 p-4">HOME</a>
+            <a href="/careerGuidance.html" class="block text-beige p-4">InAspire</a>
+            <a href="/blogs" class="block text-beige p-4">InScribe</a>
+            <a href="/tutoring" class="block text-beige p-4">InGuide</a>
+            <a href="/chats" class="block text-beige p-4">InTouch</a>
+            <a href="/admin" class="block text-beige p-4">Admin</a>
+        </div>
+
+        <script>
+            // Toggle mobile menu visibility with smooth transition
+            document.getElementById('menuToggle').addEventListener('click', function () {
+                const menu = document.getElementById('mobileMenu');
+                const isMenuOpen = menu.style.display === 'block';
+                menu.style.display = isMenuOpen ? 'none' : 'block';
+                menu.classList.toggle('translate-x-full');
+            });
+        </script>
     </nav>
     
 
@@ -129,16 +149,16 @@
         <div class="container mx-auto text-center">
             <div class="flex justify-center gap-6 mb-6">
                 <a href="#" aria-label="Facebook">
-                    <img src="images/socials icons/facebook.png" alt="Facebook icon" class="h-12">
+                    <img src="Assets/socialIcons/facebook (1).png"Facebook icon" class="h-12">
                 </a>
                 <a href="#" aria-label="Instagram">
-                    <img src="images/socials icons/instagram.png" alt="Instagram icon" class="h-12">
+                    <img src="Assets/socialIcons/instagram.png" alt="Instagram icon" class="h-12">
                 </a>
                 <a href="#" aria-label="Twitter">
-                    <img src="images/socials icons/twitter.png" alt="Twitter icon" class="h-12">
+                    <img src="Assets/socialIcons/twitter-alt.png" alt="Twitter icon" class="h-12">
                 </a>
                 <a href="#" aria-label="LinkedIn">
-                    <img src="images/socials icons/linkedin.png" alt="LinkedIn icon" class="h-12">
+                    <img src="Assets/socialIcons/linkedin.png" alt="LinkedIn icon" class="h-12">
                 </a>
             </div>
 
